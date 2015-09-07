@@ -1,0 +1,15 @@
+<div ng-controller="QuestionController">
+
+<a href="#/main">Home</a> | <a href="#/addQuestion">Add a Question</a> | <a href="#/">Logout</a><br>
+
+
+<h2>Question:{{question.question}}</h2>
+<h3>Description:{{question.description}}
+<h3>by:{{question.name}}</h3>
+
+Answers:
+<ul ng-repeat="Q in question.answers" class="text-primary">
+	<li>{{Q.answer}} - {{Q.name}} <button ng-click="upvote(Q._id)">+{{Q.like}}</button></li>
+
+</ul>
+</div>

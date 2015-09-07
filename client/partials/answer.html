@@ -1,0 +1,13 @@
+<div ng-controller="AnswerController">
+
+<a href="#/main">Home</a> | <a href="#/addQuestion">Add a Question</a> | <a href="#/">Logout</a><br>
+
+<h2>Question:{{question.question}}</h2>
+<h4>description:{{question.description}}</h4>
+
+Your Answer:<input type="text" ng-model="new_answer.answer"><br>
+Details for answer: (optional)<input type="text" ng-model="new_answer.details"><br>
+<input type="submit" ng-click="addAnswer(question._id)">
+
+
+</div>

@@ -1,0 +1,21 @@
+<div ng-controller="AnswerController">
+<a href="#/main">Home</a> | <a href="#/addQuestion">Add a Question</a> | <a href="#/">Logout</a><br><br>
+
+
+hello {{logged_user.name}}<br>
+
+
+
+Search:<input type="text" ng-model="filter_question" placeholder="question">
+<table class="table table-striped table-hover">
+	<tr>
+		<th>Question</th>
+		<th>Answers</th>
+		<th>Action</th>
+	</tr>
+	<tr ng-repeat="question in questions | orderBy:'':true | filter: filter_question">
+		<td>{{question.question}}</td>
+		<td>{{question.answers.length}}</td>
+		<td><a href="#/question/{{question._id}}">show</a> | <a href="#/answer/{{question._id}}">answer</a></td>
+	</tr>
+</table>
